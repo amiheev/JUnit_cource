@@ -5,39 +5,38 @@ import com.tngtech.java.junit.dataprovider.UseDataProvider;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.experimental.categories.Category;
-import static org.hamcrest.CoreMatchers.*;
+
 import java.io.File;
 
 
-public class SampleTest extends TestBase {
-
+public class SampleTest  extends Rules {
 
     @Test()
-    @Category({PositiveTest.class})
+    @Category({MyCategories.PositiveTest.class})
     @UseDataProvider("loadBookNameFromFile")
     public void positiveCase1(String fileName) throws Exception {
         File sourceFile = new File(folderPath, fileName);
-        Assert.assertTrue("File — "  + sourceFile.getName() + " created",sourceFile.createNewFile());
+        Assert.assertTrue("File — "  + sourceFile.getName() + " is already exist",sourceFile.createNewFile());
     }
 
     @Test()
-    @Category({PositiveTest.class})
+    @Category({MyCategories.PositiveTest.class})
     @UseDataProvider("loadBookNameFromFile")
     public void positiveCase2(String fileName) throws Exception {
         File sourceFile = new File(folderPath, fileName);
-        Assert.assertTrue("File — "  + sourceFile.getName() + " created",sourceFile.createNewFile());
+        Assert.assertTrue("File — "  + sourceFile.getName() + " is already exist",sourceFile.createNewFile());
     }
 
     @Test()
-    @Category({PositiveTest.class})
+    @Category({MyCategories.PositiveTest.class})
     @UseDataProvider("loadBookNameFromFile")
     public void positiveCase3(String fileName) throws Exception {
         File sourceFile = new File(folderPath, fileName);
-        Assert.assertTrue("File — "  + sourceFile.getName() + " created", sourceFile.createNewFile());
+        Assert.assertTrue("File — "  + sourceFile.getName() + " is already exist", sourceFile.createNewFile());
     }
 
     @Test()
-    @Category({NegativeTest.class})
+    @Category({MyCategories.NegativeTest.class})
     @UseDataProvider("books")
     public void negativeCase1(String fileName) throws Exception {
         File sourceFile = new File(folderPath, fileName);
@@ -45,7 +44,7 @@ public class SampleTest extends TestBase {
     }
 
     @Test()
-    @Category({NegativeTest.class})
+    @Category({MyCategories.NegativeTest.class})
     @UseDataProvider("books")
     public void negativeCase2(String fileName) throws Exception{
         File sourceFile = new File(folderPath, fileName);
