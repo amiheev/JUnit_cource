@@ -12,7 +12,7 @@ import java.io.File;
 public class SampleTest  extends Rules {
 
     @Test()
-    @Category({MyCategories.PositiveTest.class})
+    @Category({PositiveTest.class})
     @UseDataProvider("loadBookNameFromFile")
     public void positiveCase1(String fileName) throws Exception {
         File sourceFile = new File(folderPath, fileName);
@@ -20,7 +20,7 @@ public class SampleTest  extends Rules {
     }
 
     @Test()
-    @Category({MyCategories.PositiveTest.class})
+    @Category({PositiveTest.class})
     @UseDataProvider("loadBookNameFromFile")
     public void positiveCase2(String fileName) throws Exception {
         File sourceFile = new File(folderPath, fileName);
@@ -28,7 +28,7 @@ public class SampleTest  extends Rules {
     }
 
     @Test()
-    @Category({MyCategories.PositiveTest.class})
+    @Category({PositiveTest.class})
     @UseDataProvider("loadBookNameFromFile")
     public void positiveCase3(String fileName) throws Exception {
         File sourceFile = new File(folderPath, fileName);
@@ -36,7 +36,7 @@ public class SampleTest  extends Rules {
     }
 
     @Test()
-    @Category({MyCategories.NegativeTest.class})
+    @Category({NegativeTest.class})
     @UseDataProvider("books")
     public void negativeCase1(String fileName) throws Exception {
         File sourceFile = new File(folderPath, fileName);
@@ -44,7 +44,7 @@ public class SampleTest  extends Rules {
     }
 
     @Test()
-    @Category({MyCategories.NegativeTest.class})
+    @Category({NegativeTest.class})
     @UseDataProvider("books")
     public void negativeCase2(String fileName) throws Exception{
         File sourceFile = new File(folderPath, fileName);
